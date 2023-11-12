@@ -5,7 +5,11 @@ plugins {
 
 android {
     namespace = "com.dkgtech.wallpaper"
-    compileSdk = 33
+    compileSdk = 34
+
+    buildFeatures {
+        viewBinding = true
+    }
 
     defaultConfig {
         applicationId = "com.dkgtech.wallpaper"
@@ -21,8 +25,7 @@ android {
         release {
             isMinifyEnabled = false
             proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             )
         }
     }
@@ -44,4 +47,11 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
+//    retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+//    GSON
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+//    Picasso
+    implementation("com.squareup.picasso:picasso:2.71828")
 }
